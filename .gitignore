@@ -1,0 +1,5 @@
+.backend_started_by_speak
+__pycache__/
+*.pyc
+*.wav
+*.mp3
