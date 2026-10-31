@@ -25,7 +25,7 @@ Needs Python 3, ffmpeg (`ffplay`), Claude Code, and VoiceStudio with a voice. Fu
 Windows, one command (installs Python, ffmpeg and VoiceStudio if missing, then adds the hooks):
 
 ```
-git clone <this repo url> && cd claude-voice
+git clone https://github.com/fastlaneracing/claude-voice.git && cd claude-voice
 powershell -ExecutionPolicy Bypass -File setup.ps1     # add -DryRun to preview
 ```
 

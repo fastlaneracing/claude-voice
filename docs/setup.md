@@ -37,7 +37,7 @@ Open a **new** terminal after installing ffmpeg so PATH updates.
 ## 3. Get this repo and install the hooks
 
 ```
-git clone <this repo url>
+git clone https://github.com/fastlaneracing/claude-voice.git
 cd claude-voice
 python install.py
 ```
