@@ -5,6 +5,7 @@
 | File | Role |
 |---|---|
 | `scripts/speak.py` | Client. Ensures the backend is up, POSTs text, pipes PCM to `ffplay`. |
+| `scripts/vs_tts.py` | Hermes Agent TTS adapter (command provider). Reads text, POSTs to the backend's `/v1/audio/speech`, writes the audio file, plays it with `ffplay`. |
 | `scripts/voice_session_start.py` | SessionStart hook; emits `additionalContext` telling Claude to offer voice. |
 | `scripts/stop_backend.py` | SessionEnd hook; kills the backend only if `.backend_started_by_speak` exists. |
 | `examples/settings.hooks.json` | Hook and permission config to merge into Claude Code settings. |

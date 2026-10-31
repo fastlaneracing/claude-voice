@@ -9,7 +9,7 @@ Needs the VoiceStudio backend (auto-started if installed) and ffplay (ffmpeg) on
 Environment (all optional):
   CLAUDE_VOICE_PROFILE   default voice profile id (else: first non-demo profile)
   CLAUDE_VOICE_LANGUAGE  default language (default: English)
-  CLAUDE_VOICE_SPEED     default speed multiplier 0.5-2.0 (default: 1.0)
+  CLAUDE_VOICE_SPEED     default speed multiplier 0.5-2.0 (default: 1.7)
   OMNIVOICE_PORT         backend port (default: 3900)
   VOICESTUDIO_PROJECT    backend project dir, if not in the default app location
 """
@@ -113,7 +113,7 @@ def main():
     text = sys.argv[1]
     profile_id = (sys.argv[2] if len(sys.argv) > 2 else None) or os.environ.get("CLAUDE_VOICE_PROFILE") or default_profile()
     language = sys.argv[3] if len(sys.argv) > 3 else os.environ.get("CLAUDE_VOICE_LANGUAGE", "English")
-    speed = sys.argv[4] if len(sys.argv) > 4 else os.environ.get("CLAUDE_VOICE_SPEED", "1.0")
+    speed = sys.argv[4] if len(sys.argv) > 4 else os.environ.get("CLAUDE_VOICE_SPEED", "1.7")
 
     form = {"text": text, "profile_id": profile_id, "language": language, "speed": speed, "stream": "true"}
     req = urllib.request.Request(base + "/generate", urllib.parse.urlencode(form).encode())
@@ -138,4 +138,5 @@ def main():
         player.wait()
 
 
-main()
+if __name__ == "__main__":
+    main()

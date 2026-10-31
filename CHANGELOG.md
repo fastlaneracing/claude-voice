@@ -8,3 +8,4 @@
 - Backend discovery and process handling work on Windows, macOS and Linux (non-Windows untested).
 - `voice_session_start.py` resolves the `speak.py` path from its own location.
 - `docs/setup.md`: from-scratch setup for a new machine.
+- `vs_tts.py`: Hermes TTS adapter (command provider). Reads text, POSTs to the VoiceStudio backend's OpenAI-compatible `/v1/audio/speech`, writes the audio, and (by default) plays it to the speakers with `ffplay`. Lets any agent (not just Claude Code) speak with a VoiceStudio voice via Hermes's `tts.providers.<name>.command`.

@@ -56,7 +56,9 @@ python scripts/speak.py --list-voices
 
 ## Docs
 
+- [AGENTS.md](AGENTS.md): use with any agent platform or inference provider
 - [docs/setup.md](docs/setup.md): install on a new machine
+- [docs/hermes.md](docs/hermes.md): configure Hermes Agent to speak with VoiceStudio (TTS command provider)
 - [docs/architecture.md](docs/architecture.md): protocol and design decisions
 - [docs/adding-voices.md](docs/adding-voices.md): adding or switching voices
 - [docs/troubleshooting.md](docs/troubleshooting.md)
