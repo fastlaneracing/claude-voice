@@ -9,7 +9,7 @@ Same as the rest of this repo (see [setup.md](setup.md)):
 - Python 3.8+ (stdlib only)
 - ffmpeg on PATH (`ffplay`), so the finished clip can play
 - VoiceStudio installed and launched once, with at least one voice created
-- This repo cloned (example below uses `C:/devops/claude-voice`)
+- This repo cloned (example below uses `<REPO>` as a placeholder)
 - Hermes Agent installed (`curl -fsSL https://hermes-agent.nousresearch.com/install.sh | bash`, or its Windows installer)
 
 Check the backend answers before wiring it in:
@@ -27,7 +27,7 @@ The config lives in Hermes's `config.yaml` (for this install: `%LOCALAPPDATA%\he
 ```
 hermes config set tts.provider voicestudio
 hermes config set tts.providers.voicestudio.type command
-hermes config set "tts.providers.voicestudio.command" "python -I C:/devops/claude-voice/scripts/vs_tts.py --input {input_path} --output {output_path} --voice lane --speed 1.7 --base http://127.0.0.1:3900"
+hermes config set "tts.providers.voicestudio.command" "python -I <REPO>/scripts/vs_tts.py --input {input_path} --output {output_path} --voice lane --speed 1.7 --base http://127.0.0.1:3900"
 hermes config set tts.providers.voicestudio.format mp3
 hermes config set tts.providers.voicestudio.timeout 300
 ```
@@ -40,7 +40,7 @@ tts:
   providers:
     voicestudio:
       type: command
-      command: python -I C:/devops/claude-voice/scripts/vs_tts.py --input {input_path} --output {output_path} --voice lane --speed 1.7 --base http://127.0.0.1:3900
+      command: python -I <REPO>/scripts/vs_tts.py --input {input_path} --output {output_path} --voice lane --speed 1.7 --base http://127.0.0.1:3900
       format: mp3
       timeout: 300
 ```
@@ -62,8 +62,8 @@ Replace the path with your clone's path (forward slashes), `lane` with your prof
 Direct (writes a file, plays it, returns when playback ends):
 
 ```
-python -I C:/devops/claude-voice/scripts/vs_tts.py --input <any_text_file> --output test.mp3
-python -I C:/devops/claude-voice/scripts/vs_tts.py --input <any_text_file> --output test.wav --no-play
+python -I <REPO>/scripts/vs_tts.py --input <any_text_file> --output test.mp3
+python -I <REPO>/scripts/vs_tts.py --input <any_text_file> --output test.wav --no-play
 ```
 
 `--no-play` skips ffplay (use it for delivery contexts where the file should just be returned).
